@@ -136,4 +136,33 @@ document.addEventListener('DOMContentLoaded', () => {
             "retina_detect": true
         });
     }
+
+    // 7. Typed.js Typewriter Effect
+    if (typeof Typed !== 'undefined') {
+        new Typed('.typed-text', {
+            strings: [
+                "Mathematics and Computing @ <span class='highlight'>IIT Guwahati</span>",
+                "Backend Engineer",
+                "AI Enthusiast",
+                "Competitive Programmer"
+            ],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 2000,
+            loop: true,
+            showCursor: true,
+            cursorChar: '|'
+        });
+    }
+
+    // 8. Scroll Progress Bar
+    const scrollProgress = document.getElementById('scroll-progress');
+    if (scrollProgress) {
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+    }
 });

@@ -679,3 +679,47 @@ footer p {
         display: none !important;
     }
 }
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-purple));
+    z-index: 10000;
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* Glitch Effect on Name */
+.name {
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.name:hover {
+    animation: glitch-skew 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: var(--accent);
+    text-shadow: 2px 0 var(--accent-purple), -2px 0 var(--accent);
+}
+
+@keyframes glitch-skew {
+    0% { transform: skew(0deg); }
+    20% { transform: skew(-10deg); }
+    40% { transform: skew(10deg); }
+    60% { transform: skew(-5deg); }
+    80% { transform: skew(5deg); }
+    100% { transform: skew(0deg); }
+}
+
+/* Typed Cursor Styling */
+.typed-cursor {
+    color: var(--accent);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
